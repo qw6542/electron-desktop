@@ -1,0 +1,85 @@
+  {% extends "../extends/layout.html" %}
+
+
+  {% block head %}
+  <title>SCS API Mocktoken</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../static/govuk-frontend-4.1.0.min.css">
+  <script src="../static/govuk-frontend-4.1.0.min.js"></script>
+
+  <!-- Scripts -->
+
+  <script src="renderer.js"></script>
+  {% endblock %}
+  
+  
+  {% block title %}
+  <h1 class="title">SCS API Mocktoken</h1>
+  {% endblock %}
+  
+  {% block content %}
+  
+  
+    <div class="govuk-width-container">
+  
+      <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <form action="" method="post" novalidate>
+    
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      Get SCS API Mocktoken
+                    </h1>
+                  </legend>
+  
+               <div class="govuk-form-group">
+                 <label class="govuk-label govuk-label--m" for="odsCode">
+                 OdsCodes
+                 </label>
+                 <div id="odsCode" class="govuk-hint">
+                  For example, FAAAA
+                 </div>
+                 <input class="govuk-input govuk-input--width-10" id="odsCode-input" name="odsCode-input" type="text" aria-describedby="odsCode-input-hint" value="FAAAA">
+               </div>
+  
+  
+               <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--m" for="email-input">
+                  Email
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="email-input" name="email-input" type="text" aria-describedby="email-input-hint" value="example@email.com">
+              </div>
+  
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--m" for="username">
+                  Username
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="username-input" name="username-input" type="text" aria-describedby="username-input-hint" value="Alice Bob">
+              </div>
+  
+                
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--m" for="token-output">
+                  Token
+                </label>
+                <textarea  class="govuk-textarea" id="token-output" name="token-output" type="text" rows="10" aria-describedby="token-output-hint" >
+                </textarea>
+              </div>
+              
+                </fieldset>
+              </div>
+    
+              <button class="govuk-button" data-module="govuk-button" onclick="getToken()" type='button'>
+                Get Token
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>  
+  
+  {% endblock %}

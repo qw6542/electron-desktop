@@ -11,7 +11,10 @@
     "build": "electron-builder build --win portable"
   },
   "dependencies": {
+    "@bsa/mys-errors": "^1.0.8",
     "crypto": "^1.0.1",
+    "electron-nunjucks": "^1.0.3",
+    "electron-photon": "^1.1.6",
     "govuk-frontend": "4.1.0",
     "jsonwebtoken": "8.5.1"
   },

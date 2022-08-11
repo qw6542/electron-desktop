@@ -1,0 +1,28 @@
+{% extends "../extends/layout.html" %}
+
+
+{% block head %}
+<script src="renderer.js" defer></script>
+
+{% endblock %}
+
+{% block title %}
+<h1 class="title" >⚡ Electron Screen Recorder</h1>
+
+{% endblock %}
+
+
+{% block content %}
+
+    <video></video>
+
+    <button id="startBtn" class="button" onclick="clickStart()">Start</button>
+    <button id="stopBtn" class="button">Stop</button>
+
+    <hr />
+
+    <button id="videoSelectBtn" class="button">
+      Choose a Video Source
+    </button>
+
+  {% endblock %}

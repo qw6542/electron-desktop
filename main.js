@@ -1,25 +1,26 @@
 
-const { app, BrowserWindow } = require('electron')
-// const { getToken } = require('./get-token');
+const { app, BrowserWindow } = require('electron');
 const path = require('path');
-require('./node/handlers');
+const { HelperConfig } = require('./helpers')
 
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1024,
+    height: 800,
     icon: path.join(__dirname, './pages/static/assets/images/favicon.ico'),
     webPreferences: {
       preload: path.join(__dirname, './node/preload.js'),
     }
-  })
+  });
+
+
 
   // and load the index.html of the app.
-  mainWindow.loadFile('./pages/index.html')
+  mainWindow.loadFile('./pages/home/index.html');
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
@@ -46,8 +47,6 @@ app.on('window-all-closed', () => {
 // code. You can also put them in separate files and require them here.
 
 
-// ipcMain.handle('getToken', (event, args) => {
+require('./node/handlers');
 
-//     return getToken(args);
-//   });
-  
+HelperConfig(app);
